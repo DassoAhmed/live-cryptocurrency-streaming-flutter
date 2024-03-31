@@ -1,30 +1,29 @@
-name: ably_cryptocurrency
-description: A new Flutter project.
-
-publish_to: "none"
-
-version: 1.0.0+1
+name: ably_flutter
+description: A wrapper around Ably's Cocoa and Java client library SDKs, providing iOS and Android support.
+version: 1.2.27
+repository: https://github.com/ably/ably-flutter
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
+  flutter: ">=2.5.0"
 
 dependencies:
+  collection: ^1.15.0
   flutter:
     sdk: flutter
-  ably_flutter_plugin: ^1.0.0+dev.2
-  get_it: ^5.0.1
-  http: ^0.12.2
-  intl: ^0.16.1
-  syncfusion_flutter_charts: ^18.3.52
-  tweet_ui: ^2.4.2
-  twitter_api: ^0.1.2
+  meta: ^1.3.0
 
 dev_dependencies:
+  fake_async: ^1.1.0
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
 
 flutter:
-  uses-material-design: true
-
-  assets:
-    - assets/
+  plugin:
+    platforms:
+      android:
+        package: io.ably.flutter.plugin
+        pluginClass: AblyFlutter
+      ios:
+        pluginClass: AblyFlutter
